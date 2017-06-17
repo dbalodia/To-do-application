@@ -1,0 +1,45 @@
+<html ng-app="nameApp">
+<head>
+    <meta charset="utf-8">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--custom css-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!--font-->
+</head>
+<body ng-controller="NameCtrl">
+<!--navbar-->
+<div>
+    <nav class="navbar navbar-inverse colorNav navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand textheader" ui-sref="#">Task Manager</a>
+            </div>
+            <ul class="nav navbar-nav" style="float: right;">
+                <li><a ui-sref="home" class="textColor">Home</a></li>
+                <li><a ui-sref="toDo" class="textColor">To Do</a></li>
+                <li><a ui-sref="aboutUs" class="textColor">About Us</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div ui-view></div>
+
+</body>
+<!--bower angular script-->
+<script src="bower_components/angular/angular.min.js"></script>
+<!--bower drag and drop-->
+<script src="bower_components/angular-drag-and-drop-lists/angular-drag-and-drop-lists.min.js"></script>
+<!--angular route -->
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<!--custom js-->
+<script src="js/controller.js"></script>
+<!--custom service js-->
+<script src="js/factory.js"></script>
+<!--routing script-->
+<script src="js/routing.js"></script>
+<!--directive js-->
+<script src="js/directive.js"></script>
+</html>
+

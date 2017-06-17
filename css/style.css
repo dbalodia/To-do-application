@@ -1,0 +1,139 @@
+h1, h2, h3, body, p, ul, li {
+    padding: 0;
+    margin: 0;
+}
+
+ul, li {
+    min-height: 30px;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.navbar-inverse .navbar-nav > li > a.textColor {
+    color: #000;
+    font-weight: bold;
+}
+
+.navbar-inverse .navbar-brand.textheader {
+    color: #000;
+    font-weight: bold;
+}
+
+.navbar-inverse.colorNav {
+    background-color: #fed136;
+    border-color: #fed136;
+}
+
+a:hover, a {
+    text-decoration: none;
+}
+
+.fullPage {
+
+    height: auto;
+    display: inline-block;
+    width: 100%;
+}
+
+.mainPage {
+    width: 100%;
+    text-align: center;
+    height: auto;
+    display: inline-block;
+}
+
+.container h1 {
+    text-align: center;
+    font-size: 60px;
+    margin-bottom: 30px;
+    margin-top: 77px;
+}
+
+.threeColumn h2 {
+    margin-top: 10px;
+}
+
+input.ng-pristine.ng-valid {
+    background-color: whitesmoke;
+}
+
+.taskBox {
+    background-color: #fed136;
+}
+
+.middleBox {
+    background-color: #fed136;
+}
+
+.finalBox {
+    background-color: #fed136;
+}
+
+a {
+    text-decoration: none;
+}
+
+li.ng-scope.ng-binding {
+    padding: 10px;
+
+}
+
+.threeColumn {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+
+.startingTaskLayout {
+    border: 5px solid transparent;
+    width: 100%;
+    height: auto;
+    box-shadow: 6px 6px 6px gray;
+    margin-top: 10px;
+    border-radius: 24px;
+    text-align: center;
+    display: inline-block;
+}
+
+.startingTaskLayout li {
+    border: 2px solid transparent;
+    padding: 2px !important;
+    border-radius: 24px;
+    color: black;
+    word-wrap:break-word;
+    font-weight: bold;
+    background-color: #ffffff;
+    margin: 5px;
+    box-shadow: 3px 3px 3px #4B515D;
+}
+
+.searchLayout {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    background-color: #69f0ae;
+}
+
+.addButton {
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+}
+
+.formColor {
+    border-radius: 10px 10px 10px 10px;
+    background-color: #ffffff;
+    font-weight: bold;
+    margin: 5px;
+    text-align: center;
+}
+
+.buttonDisplay {
+    background-color: rgba(254, 209, 54, 1);
+    margin-left: 20px;
+}
+.fa.fontColor{
+    color:#000;
+    float: right;
+    font-size: xx-large;
+}

@@ -1,0 +1,77 @@
+<div>
+<div class="threeColumn">
+    <div class="col-md-4 col-sm-4 col-xs-12">
+
+        <div class="startingTaskLayout taskBox ">
+            <div class="align">
+
+                <h2><i class="fa fontColor fa-thumb-tack " aria-hidden="true"></i>Starting Task</h2>
+            </div>
+
+            <hr>
+            <ul dnd-list="startingTask">
+                <li ng-repeat="name in startingTask track by $index"
+                    dnd-draggable="name"
+                    dnd-moved="startingTask.splice($index, 1);updateValue()"
+                    dnd-effect-allowed="move"
+                >{{name | uppercase}}
+                    <button type="button" class="btn btn-default buttonDisplay">
+                        <a href="" ng-click="taskDoing($index,'startingTask','middleTask')">TASK</a>
+                    </button>
+                </li>
+            </ul>
+            <!--submit form-->
+            <div class="addButton ">
+                <form ng-submit="addName()">
+                    <input type="text" ng-model="enteredName" class="formColor">
+                    <input type="submit" class="formColor" ng-click="saveData()" value="ADD">
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4 col-sm-4 col-xs-12 ">
+
+        <div class="startingTaskLayout middleBox">
+            <div>
+
+                <h2><i class="fa fontColor fa-suitcase" aria-hidden="true"></i>Middle Task</h2>
+            </div>
+
+            <hr>
+            <ul dnd-list="middleTask">
+                <li ng-repeat="name in middleTask track by $index"
+                    dnd-draggable="name"
+                    dnd-moved="middleTask.splice($index, 1);updateValue()"
+                    dnd-effect-allowed="move"
+                >{{name}}
+                    <button type="button" class="btn btn-default buttonDisplay">
+                        <a href="" ng-click="taskDoing($index,'middleTask','finalTask')">DOING</a>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+
+        <div class="startingTaskLayout finalBox">
+            <div>
+
+                <h2><i class="fa fontColor fa-check-circle" aria-hidden="true"></i>Completed Task</h2></div>
+            <hr>
+            <ul dnd-list="finalTask" ng-model="test">
+                <li ng-repeat="name in finalTask track by $index"
+                    dnd-draggable="name"
+                    dnd-moved="finalTask.splice($index, 1);updateValue()"
+                    dnd-effect-allowed="move"
+                >{{name}}
+                    <button type="button" class="btn btn-default buttonDisplay disabled">
+                        <a>DONE</a></button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
