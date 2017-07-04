@@ -7,6 +7,12 @@ nameApp.controller('NameCtrl', function ($scope, taskManager) {
     $scope.startingTask = [];
     $scope.middleTask = [];
     $scope.finalTask = [];
+    $scope.addBtn = true;
+    $scope.updateForm = true;
+    $scope.enterForm = true;
+    $scope.updateBtn = true;
+    $scope.cancelBtn = true;
+    $scope.editableId = null;
     if (localStorage.getItem("startingTask") != null && localStorage.getItem("startingTask") != undefined) {
         $scope.startingTask = JSON.parse(localStorage.getItem("startingTask"));
     }
@@ -26,6 +32,47 @@ nameApp.controller('NameCtrl', function ($scope, taskManager) {
         var data = taskManager.shiftingName(name, list1, list2);
         $scope[list1] = JSON.parse(data.task1);
         $scope[list2] = JSON.parse(data.task2);
+
+    };
+    $scope.deleteTask = function (id) {
+        var finalData = JSON.parse(localStorage.getItem('finalTask'));
+        finalData.splice(id, 1);
+        $scope.finalTask = finalData;
+        localStorage.setItem("finalTask", JSON.stringify(finalData))
+
+    };
+    $scope.editButton = function (id) {
+        var editData = JSON.parse(localStorage.getItem("startingTask"));
+        $scope.enteredName = editData[id];
+        $scope.editableId = id;
+        $scope.addBtn = false;
+        $scope.updateBtn = false;
+        $scope.cancelBtn = false;
+        $scope.updateForm = false;
+        $scope.enterForm = false;
+
+    };
+    $scope.updateButton = function () {
+        var updateData = JSON.parse(localStorage.getItem("startingTask"));
+        console.log(updateData);
+        updateData[$scope.editableId] = $scope.enteredName;
+        console.log(updateData);
+        localStorage.setItem('startingTask', JSON.stringify(updateData));
+        $scope.startingTask = updateData;
+        $scope.addBtn = true;
+        $scope.enterForm = true;
+        $scope.updateBtn = true;
+        $scope.cancelBtn = true;
+        $scope.updateForm = true;
+        $scope.enteredName = '';
+    };
+    $scope.cancelButton = function () {
+        $scope.addBtn = true;
+        $scope.enterForm = true;
+        $scope.updateBtn = true;
+        $scope.cancelBtn = true;
+        $scope.updateForm = true;
+        $scope.enteredName = '';
 
     };
     $scope.saveData = function () {
